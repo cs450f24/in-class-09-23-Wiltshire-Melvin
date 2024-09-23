@@ -18,7 +18,7 @@
 
 ;; A BALL-IMG is a circle 
 (define BALL-IMG
-        (circle "solid" "red"))
+        (circle 50 "solid" "red"))
 ;; Interp: Created red cirlce with given space
 
 ;; A WorldState cannot be a negative integar
@@ -33,7 +33,10 @@
 (define (next-worldstate w w)
   (add1 w))
 
-
+(define (main)
+         (big-bang INIT-WORLDSTATE
+         [on-mouse next-worldstate]
+         [to-draw render]))
 
 
 
