@@ -2,3 +2,39 @@
 
 (provide (all-defined-out))
 
+(require 2htdp/image
+         2htdp/universe)
+
+;; The give space of WorldState: 
+(define WORLD-WIDTH 200)
+(define WORLD-HEIGHT 200)
+;; Interp: Represents the big bang area of pixels
+
+;; The given space of the WorldState
+(define EMPTY-SCENE (empty-scene WORLD-WIDTH WORLD-HEIGHT))
+;; Interp: Represents teh empty space created in pixels 
+
+(define BAlL-X (/WORLD-WIDTH 2))
+
+;; A BALL-IMG is a circle 
+(define BALL-IMG
+        (circle "solid" "red"))
+;; Interp: Created red cirlce with given space
+
+;; A WorldState cannot be a negative integar
+(define INIT-WORLDSTATE 0 0)
+;; Interp: Made INIT-WORLDSTATE 0 to represent a positive y coordinate 
+
+(define (WorldState? w)
+  (number? w))
+
+;; next-img: WorldState -> WorldState
+;; Each tick increments the postion of y by 1 
+(define (next-worldstate w w)
+  (add1 w))
+
+
+
+
+
+
