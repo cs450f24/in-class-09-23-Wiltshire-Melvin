@@ -21,8 +21,10 @@
         (circle 50 "solid" "red"))
 ;; Interp: Created red cirlce with given space
 
+(struct world [x y])
+
 ;; A WorldState cannot be a negative integar
-(define INIT-WORLDSTATE 0 0)
+(define INIT-WORLDSTATE (make-world 0 0))
 ;; Interp: Made INIT-WORLDSTATE 0 to represent a positive y coordinate 
 
 (define (WorldState? w)
